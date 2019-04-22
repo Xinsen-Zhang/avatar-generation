@@ -8,6 +8,6 @@ latent_dim = 128
 lr = 5e-5
 epoch_num = 1000
 n_critic = 5
-n_epochs = 500
+n_epochs = 2000
 clip_value = 0.01
 sample_interval = 200
