@@ -1,5 +1,6 @@
 
 
+
 import torch
 from config import img_size, img_shape, batch_size, lr, n_epochs, latent_dim, n_critic,channels, n_epochs, clip_value, sample_interval
 from utils import next_batch, batch_num
@@ -127,7 +128,7 @@ for epoch in range(n_epochs):
             )
 
         if batches_done % sample_interval == 0:
-            save_image(gen_imgs.data[:64], "wgan_faces/%d.png" % batches_done, nrow=64, normalize=True)
+            save_image(gen_imgs.data[:64], "wgan_faces/%d.png" % batches_done, nrow=8, normalize=True)
         batches_done += 1
     os.system('git add .')
     os.system("git commit -m '{}轮迭代结束'".format(epoch))
