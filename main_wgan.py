@@ -130,6 +130,7 @@ for epoch in range(n_epochs):
         if batches_done % sample_interval == 0:
             save_image(gen_imgs.data[:64], "wgan_faces/%d.png" % batches_done, nrow=8, normalize=True)
         batches_done += 1
-    os.system('git add .')
-    os.system("git commit -m '{}轮迭代结束'".format(epoch))
-    os.system('git push')
+    if epoch % 10 == 0:
+        os.system('git add .')
+        os.system("git commit -m '{}轮迭代结束'".format(epoch))
+        os.system('git push')
