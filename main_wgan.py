@@ -122,13 +122,13 @@ for epoch in range(n_epochs):
             loss_G.backward()
             optimizer_G.step()
 
-            print(
-                "[Epoch %d/%d] [Batch %d/%d] [D loss: %f] [G loss: %f]"
-                % (epoch, n_epochs, i, len(dataloader), loss_D.item(), loss_G.item())
-            )
+            # print(
+            #     "[Epoch %d/%d] [Batch %d/%d] [D loss: %f] [G loss: %f]"
+            #     % (epoch, n_epochs, i, len(dataloader), loss_D.item(), loss_G.item())
+            # )
 
         if batches_done % sample_interval == 0:
-            save_image(gen_imgs.data[:64], "wgan_faces/%d.png" % batches_done, nrow=8, normalize=True)
+            save_image(gen_imgs.data[:25], "wgan_faces/%d.png" % batches_done, nrow=5, normalize=True)
         batches_done += 1
     if epoch % 10 == 0:
         os.system('git add .')
