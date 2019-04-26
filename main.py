@@ -78,7 +78,7 @@ Tensor = torch.cuda.FloatTensor if cuda else torch.FloatTensor
 # ----------
 
 batches_done = 0
-for epoch in range(n_epochs):
+for epoch in range(600, 600 + n_epochs):
     # load the model
     if epoch % 100 == 0:
         if os.path.exists('./checkpoint'):
@@ -142,7 +142,7 @@ for epoch in range(n_epochs):
         batches_done += 1
     save_image(gen_imgs.data[:25], "wgan_faces/epoch_{}.png".format(epoch), nrow=5, normalize=True)
 
-    if epoch % 100 == 0:
+    if epoch % 20 == 0:
         torch.save(generator, './checkpoint/generator.pkl')
         torch.save(discriminator, './checkpoint/discriminator.pkl')
         torch.save(optimizer_D, './checkpoint/optimizer_D.pkl')
