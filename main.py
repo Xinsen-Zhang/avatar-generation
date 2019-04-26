@@ -37,11 +37,6 @@ def load_model():
     discriminator = torch.load('./checkpoint/discriminator.pkl')
     optimizer_D = torch.load('./checkpoint/optimizer_D.pkl')
     optimizer_G = torch.load('./checkpoint/optimizer_G.pkl')
-    if cuda:
-        generator.cuda()
-        discriminator.cuda()
-        optimizer_D.cuda()
-        optimizer_G.cuda()
     return generator, discriminator, optimizer_G, optimizer_D
 
 if os.path.exists('./checkpoint'):
