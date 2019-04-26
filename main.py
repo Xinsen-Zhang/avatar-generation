@@ -12,7 +12,7 @@ else:
 # import packages
 import torch
 from config import img_size, img_shape, batch_size, lr, n_epochs, latent_dim, n_critic,channels, n_epochs, clip_value, sample_interval
-from utils import next_batch, batch_num
+# from utils import next_batch, batch_num
 from WGAN import model
 from torch.autograd import   Variable
 import numpy as np
