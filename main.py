@@ -136,6 +136,11 @@ for epoch in range(600, 600 + n_epochs):
         # if batches_done % sample_interval == 0:
         batches_done += 1
     save_image(gen_imgs.data[:25], "wgan_faces/epoch_{}.png".format(epoch), nrow=5, normalize=True)
+    
+    print(
+                "[Epoch %d/%d] [D loss: %f] [G loss: %f]"
+                % (epoch, n_epochs, loss_D.item(), loss_G.item())
+            )
 
     if epoch % 20 == 0:
         torch.save(generator, './checkpoint/generator.pkl')
