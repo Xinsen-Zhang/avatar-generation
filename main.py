@@ -73,7 +73,7 @@ Tensor = torch.cuda.FloatTensor if cuda else torch.FloatTensor
 # ----------
 
 batches_done = 0
-for epoch in range(600, 600 + n_epochs):
+for epoch in range(980, 980 + n_epochs):
     # load the model
     if epoch % 100 == 0:
         if os.path.exists('./checkpoint'):
