@@ -73,7 +73,7 @@ Tensor = torch.cuda.FloatTensor if cuda else torch.FloatTensor
 # ----------
 
 batches_done = 0
-for epoch in range(980, 980 + n_epochs):
+for epoch in range(1200, 1200 + n_epochs):
     # load the model
     if epoch % 100 == 0:
         if os.path.exists('./checkpoint'):
@@ -139,7 +139,7 @@ for epoch in range(980, 980 + n_epochs):
     
     print(
                 "[Epoch %d/%d] [D loss: %f] [G loss: %f]"
-                % (epoch, n_epochs, loss_D.item(), loss_G.item())
+                % (epoch, n_epochs + 1200, loss_D.item(), loss_G.item())
             )
 
     if epoch % 20 == 0:
